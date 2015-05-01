@@ -1,0 +1,18 @@
+h3 DOG LIST
+.row
+  .col-xs-8
+    table.table.table-striped
+      thead
+        tr 
+          th Name
+          th Age
+          th Sex
+          th Photo
+          th Delete
+      tbody
+        tr(ng-repeat='dog in dogs')
+          td: a.btn.btn-info(ui-sref='dogs.show({dogId:dog._id})') Show Dog
+          td: a.btn.btn-danger(ng-click='destroy(dog)') Remove Dog
+          td {{dog.name}}
+          td {{dog.age}}
+          td {{dog.sex}}

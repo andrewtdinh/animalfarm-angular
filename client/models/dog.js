@@ -14,5 +14,17 @@ angular.module('animalfarm')
     return $http.post(nodeUrl + '/dogs', this);
   };
 
+  Dog.destroy = function(id){
+    return $http.delete(nodeUrl + '/dogs/' + id);
+  };
+
+  Dog.find = function(){
+    return $http.get(nodeUrl + '/dogs');
+  };
+
+  Dog.findById = function(dogId){
+    return $http.get(nodeUrl + '/dogs/' + dogId);
+  };
+
   return Dog;
 });
